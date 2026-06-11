@@ -1,0 +1,34 @@
+{% extends "emp/home.html" %}
+{% load static %}
+{% block title %} Add Musician{% endblock %}
+
+{% block content %} 
+
+<div class="container mt-5">
+
+    <h2 class="text-center">Add Musician</h2>
+
+    <form method="post" action="{% url 'add_musician' %}" enctype="multipart/form-data" class="mt-4 w-50 mx-auto border rounded " >
+        {% csrf_token %}
+
+        <label class="form-label font-weight-bold" for="first_name">First Name:</label>
+            <input class="form-control" type="text" name="first_name" id="first_name">
+
+            <br>
+
+        <label class="form-label font-weight-bold" for="last_name">Last Name:</label>
+            <input class="form-control" type="text" name="last_name" id="last_name">
+
+            <br>
+
+            <label class="form-label font-weight-bold" for="instrument">Instrument:</label>
+            <input class="form-control" type="text" name="instrument" id ="instrument">
+            <br>
+
+            <label class="form-label font-weight-bold" for="profile_photo">Profile Photo:</label>
+            <input class="form-control" type="file" name="profile_photo" id="profile_photo">
+            <br>
+            <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}  

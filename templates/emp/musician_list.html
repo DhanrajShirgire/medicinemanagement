@@ -1,0 +1,40 @@
+{% extends "emp/home.html" %}
+
+
+{% block content %}
+<h2>Musician List</h2>
+
+<table class="table table-striped">
+    <tr class="table-primary">
+        <th class="col-md-1">ID</th>
+        <th class="col-md-2">First Name</th>
+        <th class="col-md-2">Last Name</th>
+        <th class="col-md-2">Instrument</th>
+        <th class="col-md-3">Profile Photo</th>
+    </tr>
+
+    {% for musician in musicians %}
+    <tr>
+        <td>{{ musician.id }}</td>
+        <td>{{ musician.first_name }}</td>
+        <td>{{ musician.last_name }}</td>
+        <td>{{ musician.instrument }}</td>
+        <td>
+            {% if musician.image %}
+            <img src="{{ musician.image.url }}" alt="Profile Picture" class="img-thumbnail" style="max-width: 100px; max-height: 100px;">           
+            {% else %}
+            No photo available.
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No musicians found.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<input type="button" value="Add Musician" onclick="window.location.href='{% url 'add_musician' %}'"> 
+
+{% endblock %}

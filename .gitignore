@@ -1,0 +1,22 @@
+*.pyc
+__pycache__/
+# Ignore the .env file which may contain sensitive information
+.env
+media/
+staticfiles/
+# Ignore the SQLite database file
+db.sqlite3
+# Ignore the virtual environment directory
+venv/
+# Ignore the .vscode directory which may contain user-specific settings
+.vscode/
+# Ignore the .idea directory which may contain user-specific settings for JetBrains IDEs
+.idea/
+# Ignore the .pytest_cache directory which may contain test cache files
+.pytest_cache/
+# Ignore the .mypy_cache directory which may contain mypy cache files
+.mypy_cache/
+# Ignore the .coverage file which may contain coverage data
+.coverage
+# Ignore the .DS_Store file which is created by macOS
+.DS_Store

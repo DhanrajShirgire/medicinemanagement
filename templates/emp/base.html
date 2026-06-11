@@ -1,0 +1,91 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Demo App{% endblock %}</title>
+
+	{% comment %} <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap 5 (CSS) -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa6mY5yY2h6v+0sKkQ5R5Q5K6Qz4l1eZlZ6xY1Y6Z3Q8b1G5f5J5s5a5b5c" crossorigin="anonymous">
+
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" integrity="sha384-rFK6Q+FQ1o3WfVf6Z1Y2h3K4w5X6Y7Z8a9B0C1D2E3F4G5H6I7J8K9L0M1N2O3P4" crossorigin="anonymous">
+ {% endcomment %}
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'music_list'  %}">Django Demo App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'add_musician' %}">Add Musician</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">about us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" font-family="Inter " aria-current="page" href="#">Contact</a>
+        </li>
+        {% comment %} <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> {% endcomment %}
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<body class=" " bg-color="#155392">	
+
+<div class="container mt-4" background-color="#164b81">
+    <h1 class="text-center mb-4">Welcome to the Demo App</h1>
+    <p class="text-center mb-5">This is a simple Django application to demonstrate basic CRUD operations with a Musician model.</p>
+</div>   
+    {% block content %}
+    {% endblock %}
+
+
+
+	<!-- jQuery (optional, some plugins need it) -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-3gJwYp6mCk6Qv6a2z6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1" crossorigin="anonymous"></script>
+
+	<!-- Popper and Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-gJ8m0Q0q1r2s3t4u5v6w7x8y9z0a1b2c3d4e5f6g7h8i9j0k" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1m3QZ6p3y5s6t7u8v9w0x1y2z3a" crossorigin="anonymous"></script>
+
+	
+	<!-- Footer -->
+	<footer class="bg-light mt-5 py-4">
+		<div class="container-fluid text-center">
+			<p class="text-muted mb-0">&copy; {% now "Y" %} Demo App. All rights reserved.</p>
+		</div>
+	</footer>
+
+</body>
+</html>
