@@ -6,7 +6,8 @@ cryptography==48.0.0
 Django
 django-rest-framework
 djangorestframework
-httplib2idna
+httplib2
+idna
 oauthlib==3.3.1
 pillow
 proto-plus
